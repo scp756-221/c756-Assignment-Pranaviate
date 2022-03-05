@@ -123,8 +123,8 @@ def delete_song(music_id):
     return (response.json())
 
 
-@bp.route('/read_OrigArtist/<music_id>', methods=['GET'])
-def read_OrigArtist(music_id):
+@bp.route('/read_orig_artist/<music_id>', methods=['GET'])
+def read_orig_artist(music_id):
     headers = request.headers
     # check header here
     if 'Authorization' not in headers:
@@ -149,8 +149,8 @@ def read_OrigArtist(music_id):
     return {'OrigArtist': oa}
 
 
-@bp.route('/write_OrigArtist/<music_id>', methods=['PUT'])
-def write_OrigArtist(music_id):
+@bp.route('/write_orig_artist/<music_id>', methods=['PUT'])
+def write_orig_artist(music_id):
     headers = request.headers
     # check header here
     if 'Authorization' not in headers:

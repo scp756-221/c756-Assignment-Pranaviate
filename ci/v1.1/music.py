@@ -57,7 +57,7 @@ class Music():
         )
         return r.status_code, r.json()['music_id']
 
-    def write_OrigArtist(self, m_id, OrigArtist):
+    def write_orig_artist(self, m_id, OrigArtist):
         """Write the original artist performing a song.
 
         Parameters
@@ -74,7 +74,7 @@ class Music():
             The HTTP status code returned by the music service.
         """
         r = requests.put(
-            self._url + 'write_OrigArtist/' + m_id,
+            self._url + 'write_orig_artist/' + m_id,
             json={'OrigArtist': OrigArtist},
             headers={'Authorization': self._auth}
         )
@@ -115,7 +115,7 @@ class Music():
                       else None)
         return r.status_code, item['Artist'], item['SongTitle'], OrigArtist
 
-    def read_OrigArtist(self, m_id):
+    def read_orig_artist(self, m_id):
         """Read the orginal artist of a song.
 
         Parameters
@@ -135,7 +135,7 @@ class Music():
           If status is not 200, None.
         """
         r = requests.get(
-            self._url + 'read_OrigArtist/' + m_id,
+            self._url + 'read_orig_artist/' + m_id,
             headers={'Authorization': self._auth}
             )
         if r.status_code != 200:
